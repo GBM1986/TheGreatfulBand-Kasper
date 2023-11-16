@@ -16,7 +16,6 @@ body{
 
 .main {
     .skewed {
-        
         position: absolute;
         top: 0;
         bottom: 0;
@@ -27,7 +26,7 @@ body{
         background: #2c3e50;
         z-index: 0;
         transform: skewY(4deg);
-        transform-origin: top right;
+        transform-origin: top right ;
         img{
             position: absolute;
             display: block;
@@ -45,7 +44,7 @@ nav {
     position: relative;
     margin: 0;
     padding: 0;
-    
+    background-color: black; 
     ul {
    
     display: flex;
@@ -76,7 +75,7 @@ nav {
 }
 
 .modal {
-    display: blo; 
+    display: none; 
     position: fixed; 
     z-index: 3; 
     padding-top: 355px; 
@@ -150,7 +149,7 @@ nav {
 
   
   button:hover{
-    color: var(--black);
+    color: var(--bone);
   }
   
    
