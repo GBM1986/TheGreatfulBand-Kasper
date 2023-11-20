@@ -14,33 +14,12 @@ body {
   background-color: var(--black);
 }
 
-.main .skewed {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #2c3e50;
-  z-index: 0;
-  transform: skewY(4deg);
-  transform-origin: top right;
-}
-.main .skewed img {
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 nav {
   position: relative;
   margin: 0;
   padding: 0;
+  background-color: black;
+  z-index: 1;
 }
 nav ul {
   display: flex;
@@ -51,7 +30,6 @@ nav ul {
   padding-right: 2rem;
 }
 nav ul li {
-  z-index: 100;
   list-style: none;
   text-decoration: none;
 }
@@ -67,8 +45,43 @@ nav ul li:nth-child(4) a {
   color: var(--red);
 }
 
+.main .skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: skewY(4deg);
+  transform-origin: top right;
+}
+.main .skewed img {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 100;
+}
+
+.slide img {
+  width: 100%;
+}
+
+button.myBtn {
+  text-decoration: none;
+  color: var(--red);
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  font-family: "Bebas Neue", "cursive";
+}
+
 .modal {
-  display: blo;
+  display: none;
   position: fixed;
   z-index: 3;
   padding-top: 355px;
@@ -79,9 +92,7 @@ nav ul li:nth-child(4) a {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* Modal Content */
-.modal-content {
+.modal .modal-content {
   position: relative;
   background-color: var(--black);
   margin: auto;
@@ -98,48 +109,121 @@ nav ul li:nth-child(4) a {
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-
-#myform {
+.modal .modal-content .container h3 {
+  color: var(--bone);
+  margin-bottom: 0.6rem;
+}
+.modal .modal-content .container h3 #myform {
   position: absolute;
   align-items: center;
   justify-content: center;
 }
-
-.container h3 {
+.modal .modal-content .container h3 #myform input[type=text] {
+  background-color: #cecece;
+}
+.modal .modal-content .container h3 #myform input[type=email] {
+  background-color: #cecece;
+}
+.modal .modal-content .close {
+  margin: -2.2rem -1.6rem;
   color: var(--bone);
-  margin-bottom: 0.6rem;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
-
-input[type=text] {
-  background-color: #cecece;
-}
-
-input[type=email] {
-  background-color: #cecece;
-}
-
-button {
+.modal .modal-content .close:hover,
+.modal .modal-content .close:focus {
+  color: #000;
   text-decoration: none;
-  color: var(--red);
-  background-color: transparent;
-  border: none;
-  font-size: 22px;
   cursor: pointer;
-  font-family: "Bebas Neue", "cursive";
 }
 
 .button2 {
   border: #cecece;
   background-color: var(--red);
   padding: 4px 10px;
+  font-size: 22px;
   border-radius: 5px;
   color: var(--bone);
   cursor: pointer;
   margin-top: 0.6rem;
+  font-family: "Bebas Neue", "cursive";
 }
 
 button:hover {
-  color: var(--black);
+  color: var(--bone);
+}
+
+.skewed-two {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transform: skewY(4deg);
+  transform-origin: bottom right;
+}
+.skewed-two .band {
+  position: relative;
+  top: 800px;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+.skewed-two .band h1 {
+  font-size: 32px;
+  color: var(--red);
+  font-weight: 300;
+  text-align: center;
+  font-family: "Bebas Neue", "cursive";
+}
+.skewed-two .band p {
+  font-size: 18px;
+  color: var(--bone);
+  margin: 20px;
+  font-weight: 300;
+  text-align: center;
+  font-family: "Bebas Neue", "cursive";
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: fixed;
+  background-color: transparent; /* Set a background color for testing */
+  height: 100px; /* Set a height for testing */
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+}
+footer .socials {
+  grid-column: 1;
+}
+footer .footer-icon {
+  grid-column: 10;
+}
+footer .footer-icon img {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin-right: 4px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: #8c4029;
+}
+
+.fa:hover {
+  opacity: 0.7;
 }
 @keyframes animatetop {
   from {
@@ -151,21 +235,6 @@ button:hover {
     opacity: 1;
   }
 }
-.close {
-  margin: -2.2rem -1.6rem;
-  color: var(--bone);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 input:invalid {
   border-radius: 10px;
   border: 2px solid red;
