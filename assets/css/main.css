@@ -20,54 +20,61 @@ nav {
   padding: 0;
   background-color: black;
   z-index: 1;
-}
-nav ul {
-  display: flex;
-  background-color: var(--black);
-  justify-content: flex-end;
-  gap: 2rem;
-  margin: 0;
-  padding-right: 2rem;
-}
-nav ul li {
-  list-style: none;
-  text-decoration: none;
-}
-nav ul li a {
-  font-family: "Bebas Neue", "cursive";
-  margin: 0;
-  list-style: none;
-  text-decoration: none;
-  color: var(--bone);
-  font-size: 20px;
-}
-nav ul li:nth-child(4) a {
-  color: var(--red);
+
+  ul {
+    display: flex;
+    background-color: var(--black);
+    justify-content: flex-end;
+    gap: 2rem;
+    margin: 0;
+    padding-right: 2rem;
+
+    li {
+      list-style: none;
+      text-decoration: none;
+
+      a {
+        font-family: "Bebas Neue", "cursive";
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        color: var(--bone);
+        font-size: 20px;
+
+        &:nth-child(4) {
+          color: var(--red);
+        }
+      }
+    }
+  }
 }
 
-.main .skewed {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: skewY(4deg);
-  transform-origin: top right;
-}
-.main .skewed img {
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 100;
-}
+.main {
+  .skewed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skewY(4deg);
+    transform-origin: top right;
 
-.slide img {
-  width: 100%;
+    img {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      z-index: 100;
+    }
+  }
+
+  .slide img {
+    width: 100%;
+  }
 }
 
 button.myBtn {
@@ -91,51 +98,56 @@ button.myBtn {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-}
-.modal .modal-content {
-  position: relative;
-  background-color: var(--black);
-  margin: auto;
-  padding: 2rem;
-  border: 1px solid var(--black);
-  border-radius: 10px;
-  width: 250px;
-  height: 200px;
-  font-family: "Bebas Neue", "cursive";
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-}
-.modal .modal-content .container h3 {
-  color: var(--bone);
-  margin-bottom: 0.6rem;
-}
-.modal .modal-content .container h3 #myform {
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-}
-.modal .modal-content .container h3 #myform input[type=text] {
-  background-color: #cecece;
-}
-.modal .modal-content .container h3 #myform input[type=email] {
-  background-color: #cecece;
-}
-.modal .modal-content .close {
-  margin: -2.2rem -1.6rem;
-  color: var(--bone);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.modal .modal-content .close:hover,
-.modal .modal-content .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+
+  .modal-content {
+    position: relative;
+    background-color: var(--black);
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    font-family: "Bebas Neue", "cursive";
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .container {
+      h3 {
+        color: var(--bone);
+        margin-bottom: 0.6rem;
+
+        #myform {
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+
+          input[type=text] {
+            background-color: #cecece;
+          }
+
+          input[type=email] {
+            background-color: #cecece;
+          }
+        }
+      }
+
+      .close {
+        margin: -2.2rem -1.6rem;
+        color: var(--bone);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
 
 .button2 {
@@ -165,28 +177,31 @@ button:hover {
   background: transparent;
   transform: skewY(4deg);
   transform-origin: bottom right;
-}
-.skewed-two .band {
-  position: relative;
-  top: 900px;
-  max-width: 1200px;
-  margin: auto;
-  padding-bottom: 100px;
-}
-.skewed-two .band h1 {
-  font-size: 32px;
-  color: var(--red);
-  font-weight: 300;
-  text-align: center;
-  font-family: "Bebas Neue", "cursive";
-}
-.skewed-two .band p {
-  font-size: 18px;
-  color: var(--bone);
-  margin: 20px;
-  font-weight: 300;
-  text-align: center;
-  font-family: "Bebas Neue", "cursive";
+
+  .band {
+    position: relative;
+    top: 900px;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 100px;
+
+    h1 {
+      font-size: 32px;
+      color: var(--red);
+      font-weight: 300;
+      text-align: center;
+      font-family: "Bebas Neue", "cursive";
+    }
+
+    p {
+      font-size: 18px;
+      color: var(--bone);
+      margin: 20px;
+      font-weight: 300;
+      text-align: center;
+      font-family: "Bebas Neue", "cursive";
+    }
+  }
 }
 
 footer {
@@ -198,18 +213,21 @@ footer {
   bottom: 0;
   width: 100%;
   height: 120px;
-}
-footer .socials {
-  grid-column: 1;
-}
-footer .footer-icon {
-  grid-column: 10;
-}
-footer .footer-icon img {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  margin-right: 4px;
+
+  .socials {
+    grid-column: 1;
+  }
+
+  .footer-icon {
+    grid-column: 10;
+
+    img {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      margin-right: 4px;
+    }
+  }
 }
 
 .fa {
@@ -220,11 +238,12 @@ footer .footer-icon img {
   text-decoration: none;
   margin: 5px 2px;
   color: #8c4029;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
-.fa:hover {
-  opacity: 0.7;
-}
 @keyframes animatetop {
   from {
     top: -300px;
@@ -235,6 +254,7 @@ footer .footer-icon img {
     opacity: 1;
   }
 }
+
 input:invalid {
   border-radius: 10px;
   border: 2px solid red;
@@ -243,4 +263,4 @@ input:invalid {
 input:valid {
   border-radius: 4px;
   border: 2px solid var(--bone);
-}/*# sourceMappingURL=main.css.map */
+}
